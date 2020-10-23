@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="classes">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/uploadbean.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/toplink-essentials-agent.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/mysql-connector-java-5.0.4-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/cos.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/toplink-essentials.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/com.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

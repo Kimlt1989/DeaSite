@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/mysql-connector-java-5.0.4-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/uploadbean.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/com.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/toplink-essentials.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/toplink-essentials-agent.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/mysql-connector-java-5.1.23-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/cos.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/lib/standard.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

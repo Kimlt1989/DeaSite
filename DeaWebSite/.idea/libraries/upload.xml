@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="upload">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/lib/upload/cos.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/web/WEB-INF/classes/lib/upload/uploadbean.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
