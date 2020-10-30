@@ -1,5 +1,7 @@
 
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.AbstractList"%>
 <%@page import="model.Games"%>
 <%@page import="dao.GameDAO"%>
 <%@page import="dao.UserDAO"%>
@@ -85,29 +87,35 @@
 			</section>
 			<section  class="homepage-slider" id="home-slider">
 				<div class="flexslider">
-					<ul class="slides">
-                                            <%
+                                              <%
                                                 GameDAO gameDAO = new GameDAO();
                                                 int numberOfFilms = 8;
                                                 List<Games> games = gameDAO.getNewestGames();
                                                 if (games != null) {
                                                     for (Games each : games) {
-                                            %>                                         
-						<li>
-                                                    <img src="images/GameImages/<%=each.getImage()%>" alt="" width="auto" height="auto"/>
-						</li>
+                                            %>    
+					<ul class="slides">
+                                                                     
+<!--						<li>
+                                                    <img src="images/GameImages/<%=each.getTrailer()%>" alt="" width="auto" height="auto"/>
+                                                    <a href="<%=each.getTrailer()%>"></a>
+						</li>-->
                                               <%
                                                         }
                                                     }
                                                 %>  
-<!--						<li>
+						<li>
 							<img src="themes/images/carousel/banner-2.jpg" alt="" />
 							<div class="intro">
 								<h1>Mid season sale</h1>
 								<p><span>Up to 50% Off</span></p>
 								<p><span>On selected items online and in stores</span></p>
 							</div>
-						</li>-->
+						</li>
+                                           	<li>
+							<img src="themes/images/carousel/banner-1.jpg" alt="" />
+				
+						</li>
 					</ul>
 				</div>			
 			</section>
@@ -121,7 +129,7 @@
 						<div class="row">
 							<div class="span12">
 								<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+									<span class="pull-left"><span class="text"><span class="line">New <strong>Products</strong></span></span></span>
 									<span class="pull-right">
 										<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
 									</span>
@@ -129,17 +137,31 @@
 								<div id="myCarousel" class="myCarousel carousel slide">
 									<div class="carousel-inner">
 										<div class="active item">
-											<ul class="thumbnails">												
+											<ul class="thumbnails">	
+                                                                                               <%
+                                                                                                   int count = 1;
+                                                                                                   List<Integer> listpd = new ArrayList<Integer>();
+                                                                                                    if (games != null) {
+                                                                                                        for (Games each : games) {
+                                                                                                            listpd.add(each.getId());
+                                                                                                %> 
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="themes/images/ladies/1.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
-														<p class="price">$17.25</p>
+														<p><a href="product_detail.html"><img src="images/GameImages/<%=each.getImage()%>" alt="" /></a></p>
+														<a href="product_detail.html" class="title"><%=each.getName()%></a><br/>
+														<a href="products.html" class="category"><%%></a>
+														<p class="price"><%=each.getPrice()%>$</p>
 													</div>
 												</li>
-												<li class="span3">
+                                                                                                      <%
+                                                                                                            if(count >= 4)
+                                                                                                                     break;
+                                                                                                                 count++;
+                                                                                                        }
+                                                                                                    }
+                                                                                                %> 
+<!--												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
 														<p><a href="product_detail.html"><img src="themes/images/ladies/2.jpg" alt="" /></a></p>
@@ -163,12 +185,36 @@
 														<a href="products.html" class="category">World once</a>
 														<p class="price">$31.45</p>
 													</div>
-												</li>
+												</li>-->
 											</ul>
 										</div>
 										<div class="item">
 											<ul class="thumbnails">
+                                                                                                        <%
+                                                                                                   
+                                                                                                   int count2 = 1;
+                                                                                                    if (games != null) {
+                                                                                                        for (Games each : games) {
+                                                                                                            if(!listpd.contains(each.getId())){
+                                                                                                %> 
 												<li class="span3">
+													<div class="product-box">
+														<span class="sale_tag"></span>
+														<p><a href="product_detail.html"><img src="images/GameImages/<%=each.getImage()%>" alt="" /></a></p>
+														<a href="product_detail.html" class="title"><%=each.getName()%></a><br/>
+														<a href="products.html" class="category"><%%></a>
+														<p class="price"><%=each.getPrice()%>$</p>
+													</div>
+												</li>
+                                                                                                      <%
+                                                                                                            if(count2 >= 4)
+                                                                                                                     break;
+                                                                                                                 count2++;
+                                                                                                        }
+                                                                                                    }
+                                                                                                    }
+                                                                                                %> 
+<!--												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="themes/images/ladies/5.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">Know exactly</a><br/>
@@ -199,7 +245,7 @@
 														<a href="products.html" class="category">Quis nostrud</a>
 														<p class="price">$35.50</p>
 													</div>
-												</li>																																	
+												</li>																																	-->
 											</ul>
 										</div>
 									</div>							
@@ -210,25 +256,44 @@
 						<div class="row">
 							<div class="span12">
 								<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Latest <strong>Products</strong></span></span></span>
+									<span class="pull-left"><span class="text"><span class="line">Last <strong>SESSION</strong></span></span></span>
 									<span class="pull-right">
 										<a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
 									</span>
 								</h4>
 								<div id="myCarousel-2" class="myCarousel carousel slide">
 									<div class="carousel-inner">
+                                                                            
 										<div class="active item">
-											<ul class="thumbnails">												
+											<ul class="thumbnails">
+                                                                                              <%
+       
+                                                                                                    int number2 = 1;
+                                                                                                    List<Games> lastSession = gameDAO.getLastSession();
+                                                                                                    
+                                                                                                    if (games != null) {
+                                                                                                     
+                                                                                                        for (Games each : lastSession) {
+                                                                                                         listpd.add(each.getId());
+                                                                                                          
+                                                                                                %>   
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
-														<p class="price">$25.50</p>
+														<p><a href="product_detail.html"><img src="images/GameImages/<%=each.getImage()%>" alt="" /></a></p>
+														<a href="product_detail.html" class="title"><%=each.getIssuedate()%></a><br/>
+<!--														<a href="products.html" class="category">Commodo consequat</a>-->
+														<p class="price"><%=each.getPrice()%>$</p>
 													</div>
 												</li>
-												<li class="span3">
+                                                                                                              <%
+                                                                                                                 if(number2 >= 4)
+                                                                                                                     break;
+                                                                                                                 number2++;
+                                                                                                        }
+                                                                                                    }
+                                                                                                %>                     
+<!--												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
@@ -251,12 +316,45 @@
 														<a href="products.html" class="category">World once</a>
 														<p class="price">$25.60</p>
 													</div>
-												</li>
+												</li>-->
 											</ul>
 										</div>
 										<div class="item">
 											<ul class="thumbnails">
+                                                                                             <%
+       
+                                                                                                
+                                                                                                    if (games != null) {
+                                                                                                     int index = 1;
+                                                                                                     List<Integer> listpd2 = new ArrayList<Integer>();
+                                                                                                        for (Games each : lastSession) {
+                                                                                                            
+                                                                                                            listpd2.add(each.getId());
+                                                                                                            listpd2.removeAll(listpd);
+                                                                                                            boolean isEqual = listpd2.equals(listpd);
+                                                                                                  
+                                                                                                           if(!listpd.contains(each.getId())){
+                                                                                                         
+                                                                                                          
+                                                                                                %>   
 												<li class="span3">
+													<div class="product-box">
+														<span class="sale_tag"></span>
+														<p><a href="product_detail.html"><img src="images/GameImages/<%=each.getImage()%>" alt="" /></a></p>
+														<a href="product_detail.html" class="title"><%=each.getIssuedate()%></a><br/>
+<!--														<a href="products.html" class="category">Commodo consequat</a>-->
+														<p class="price"><%=each.getPrice()%>$</p>
+													</div>
+												</li>
+                                                                                                              <%
+                                                                                                                 if(index >= 4)
+                                                                                                                     break;
+                                                                                                                 index++;
+                                                                                                        }
+                                                                                                        }
+                                                                                                    }
+                                                                                                %>   
+<!--												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware4.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">Know exactly</a><br/>
@@ -287,7 +385,7 @@
 														<a href="products.html" class="category">Quis nostrud</a>
 														<p class="price">$25.20</p>
 													</div>
-												</li>																																	
+												</li>																																	-->
 											</ul>
 										</div>
 									</div>							
