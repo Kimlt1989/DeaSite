@@ -17,7 +17,7 @@ import util.DAOResources;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class GameDAO extends DAOResources {
 
@@ -287,6 +287,42 @@ public class GameDAO extends DAOResources {
         List<Games> get = new ArrayList<Games>();
         try {
             String sql = "select * from games where status = 2 ORDER BY name " ;
+            Connection connection = this.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                
+              Games game = new Games();
+                
+                game.setId(rs.getInt("Id"));
+                game.setCat_id(rs.getInt("CAT_ID"));
+                game.setSup_id(rs.getInt("SUP_ID"));
+                game.setName(rs.getString("Name"));
+                game.setPrice(rs.getDouble("Price"));
+                game.setQuantity(rs.getInt("Quantity"));
+                game.setIssuedate(rs.getString("IssueDate"));
+                game.setDescription(rs.getString("Description"));
+                game.setImage(rs.getString("Image"));
+                game.setCover(rs.getString("Cover"));
+                game.setStatus(rs.getInt("Status"));
+                game.setCoverthump(rs.getString("CoverThump"));
+                game.setTrailer(rs.getString("Trailer"));
+                get.add(game);
+            }
+            rs.close();
+            statement.close();
+            this.closeConnection();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return get;
+    }
+        
+        public List<Games> getLastSession() {
+        
+        List<Games> get = new ArrayList<Games>();
+        try {
+            String sql = "select * from games WHERE IssueDate BETWEEN '20060011' and '20121213' ORDER BY  IssueDate desc" ;
             Connection connection = this.getConnection();
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);

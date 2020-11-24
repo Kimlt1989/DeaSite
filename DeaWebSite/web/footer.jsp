@@ -1,4 +1,4 @@
-<footer style="background-color:#333" >
+<footer style="background-color:#333; margin-top: 10px; width: 84.3%; margin-left: 7.85%">
     <script type="text/javascript" src="subCss/parsley.js"></script>
     <style type="text/css">
         input.parsley-error
@@ -24,7 +24,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
             color: #ffffff;
-            padding: 10px 75px;
+            padding: 10px 10px;
             background: -moz-linear-gradient(
                 top,
                 #3bd93b 0%,
@@ -52,11 +52,12 @@
         }
 
     </style>
+  
 
     <div class="container_12">
         <div class="grid_3 prefix_1">
 
-            <a href="index.jsp" class="footer_logo"><img  src="images/verification_seal.gif" alt=""></a>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<p align="left">Copyright 2007-2013, <b>www.sellDVDSonline.com     </b></p>
+            <a href="index.jsp" class="footer_logo"><img  src="" alt=""></a>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<p align="left">Copyright 2013-2020, <b>www.sellDVDSonline.com     </b></p>
  
                 <a href=""><img src="images/Mini_Icon/1.jpg" height="60px" width="60px"></a>
                 <a href=""><img src="images/Mini_Icon/2.jpeg"  height="60px" width="60px"></a>
@@ -64,7 +65,7 @@
                 <a href=""><img src="images/Mini_Icon/4.jpeg"  height="60px" width="60px"></a>
 <!--                <a href=""><img src="images/Mini_Icon/5.jpeg"  height="60px" width="60px"></a>-->
 
-    <div class="grid_3 prefix_1">
+<!--    <div class="grid_3 prefix_1">
             <center><font style="color: #3bd93b"><h4>Search Games</h4></font></center><br>
 
             <form id="form1" action="SearchServlet" method="post">
@@ -72,21 +73,20 @@
                 <a onClick="document.getElementById('form1').submit()" href="#"></a>
             </form> 
                      
-        </div>
+        </div>-->
             
         </div>
         <div class="grid_2">
             <ul>
-                <li><a href="contact.jsp"><h4>Contact</h4></a></li>
+                <li><a href="contact.jsp"><h5>Contact</h5></a></li>
                 
                 <li><a href="about.jsp"><h5>About Us</h5></a></li>
             </ul>
         </div>
         <div class="grid_2">
             <ul>
-                <li><a href="userGuide.jsp"><h4>User Guide</h4></a></li>
+                <li><a href="userGuide.jsp"><h5>User Guide</h5></a></li>
                 <li><a href="topSellers.jsp"><h5>Top Sellers</h5></a></li>
-                
                 <li><a href="faqs.jsp"><h5>FAQs</h5></a></li>
             </ul>
              

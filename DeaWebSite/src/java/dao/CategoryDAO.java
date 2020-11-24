@@ -19,7 +19,7 @@ import util.DAOResources;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class CategoryDAO extends DAOResources {
 

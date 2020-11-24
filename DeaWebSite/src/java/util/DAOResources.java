@@ -11,7 +11,7 @@ import java.sql.*;
 
 /**
  *
- * @author Administrator
+ * @author Kim Ly
  */
 public class DAOResources {
     private static final String USER_NAME="root";

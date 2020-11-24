@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class Categories {
     private int cat_id;

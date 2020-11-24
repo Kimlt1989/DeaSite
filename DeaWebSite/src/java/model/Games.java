@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class Games {
     private int id;

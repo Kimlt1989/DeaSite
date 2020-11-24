@@ -11,7 +11,7 @@ import util.DAOResources;
 
 /**
  *
- * @author Thanh
+ * @author Kim Ly
  */
 public class OrderDetailDAO extends DAOResources{
 

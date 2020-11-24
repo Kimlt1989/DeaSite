@@ -16,7 +16,7 @@ import model.Games;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class GamesDetailServlet extends HttpServlet {
 

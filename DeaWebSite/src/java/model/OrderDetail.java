@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Thanh
+ * @author Kim Ly
  */
 public class OrderDetail {
     private int id;

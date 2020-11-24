@@ -23,7 +23,7 @@ import model.Suppliers;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class UpdateSupplierServlet extends HttpServlet {
 

@@ -21,7 +21,7 @@ import model.Categories;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class AddNewCategoriesServlet extends HttpServlet {
 

@@ -17,7 +17,7 @@ import model.UserOrder;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class UserOrderConfirmServlet extends HttpServlet {
 

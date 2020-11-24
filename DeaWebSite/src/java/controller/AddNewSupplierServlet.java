@@ -20,7 +20,7 @@ import javazoom.upload.UploadFile;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class AddNewSupplierServlet extends HttpServlet {
 

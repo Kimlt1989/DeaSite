@@ -19,7 +19,7 @@ import dao.UserDAO;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class LoginServlet extends HttpServlet {
 

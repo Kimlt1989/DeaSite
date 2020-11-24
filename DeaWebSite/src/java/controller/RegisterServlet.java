@@ -15,7 +15,7 @@ import dao.UserDAO;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class RegisterServlet extends HttpServlet {
 

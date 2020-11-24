@@ -20,7 +20,7 @@ import util.DAOResources;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class SupplierDAO extends DAOResources {
 

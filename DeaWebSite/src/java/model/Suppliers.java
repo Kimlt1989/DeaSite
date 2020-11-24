@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author KIM
+ * @author Kim Ly
  */
 public class Suppliers {
     private int sup_id;

@@ -17,7 +17,7 @@ import model.Games;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class CateloriesResultServlet extends HttpServlet {
 

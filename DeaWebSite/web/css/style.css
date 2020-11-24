@@ -196,12 +196,20 @@ a.btn:hover {
 }
 .wrapper, .extra_wrapper {
     overflow: hidden;
+    padding: 0 10px 10px 0;
+    float: left;
+    width: auto;
+    height: auto;
 }
 .clear {
     float: none !important;
     clear: both;
 }
-
+.img_inner fleft{
+   padding: 0 16px 16px 0;
+    float: left;
+    width: auto;
+}
 
 /*header*/
 
@@ -321,9 +329,11 @@ margin-right: 150px;
 }
 
 .black .col1 {
-    color: #fff;
+    color: #000;
 }
-
+.coll{
+    color: #000;
+}
 .white {
     color: #666565;
     padding-bottom: 65px;
@@ -711,10 +721,13 @@ footer {
     font-size: 12px;
 }
 
-h4 {
+.h4 {
     font: 35px/35px 'Marvel', sans-serif;
     color: #CF9;
-    padding-top: 66px;
+    padding-top: 10px;
+    overflow: hidden;
+    white-space: nowrap; /* Don't forget this one */
+    text-overflow: ellipsis;
 }
 
 footer ul {

@@ -27,8 +27,8 @@
     String userId = (String) session.getAttribute("userId");
     String userName = (String) session.getAttribute("userName");
 %>
-<header style="background-color:#09C" >
-    <div class="container_12">
+<header style="background-color:#000" >
+    <div class="container_12" >
         <div class="grid_12">
             <div class="h_phone">
                <div class="blog_search">
@@ -46,7 +46,7 @@
         </div>
         <div class="clear"></div>
     </div>
-    <div class="menu_block">
+    <div class="menu_block" >
         <div class="container_12">
             <div class="grid_12">
                 <div class="socials"><a  href="https://www.facebook.com/GAMEstore"></a></div>
@@ -105,4 +105,5 @@
             <div class="clear"></div>
         </div>
     </div>
+                    <hr style="height:3px;background-color:#069; width: 84%" color="#003399"/>
 </header>
