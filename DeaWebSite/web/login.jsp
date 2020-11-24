@@ -70,8 +70,8 @@
                 <label for="username">username</label><input type="text" name="username" class="placeholder" placeholder="your username">
                 <label for="password">password</label><input type="password" name="password" class="placeholder" placeholder="your password">
                 <input type="submit" value="Log In" name="submit">                    
-            </form>
-                        <a href="register.jsp" class="ahref">A
+            </form
+                        <a href="register.jsp" class="ahref">.
                                 </a>
           
 

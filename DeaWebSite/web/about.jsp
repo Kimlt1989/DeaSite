@@ -20,14 +20,14 @@
     <body>
         <!--==============================header=================================-->
         <%@ include file="header.jsp" %>
-         <hr style="height:10px;background-color:#069" color="#003399"/>
+         
         <!--=======content================================-->
 
         <div class="content"><div class="ic"></div>
             <div class="white">
                 <div class="container_12">
                     <div class="grid_8">                  
-                        <div class="extra_wrapper">
+                        <div class="wrapper123">
                             <h3>About US</h3>
                             <p>Sell DVDS online was created as an easy way for people to sell DVD's CD's and Video Games online. Sell DVD's Online is owned by parent company Ez Book Recycle Inc. Ez Book Recycle Inc. is no stranger to buying items online. With the first buyback website launching in February 2008, Ez Book Recycle has purchased items from over 58,000 individuals from every state in the US!</p>
                             
@@ -55,7 +55,7 @@
         </div>
     </div>
     <!--==============================footer=================================-->
-     <hr style="height:10px;background-color:#069" color="#003399"/>
+   
     <%@ include file="footer.jsp" %>
 </body>
 </html>

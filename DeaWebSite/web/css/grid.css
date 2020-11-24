@@ -76,7 +76,9 @@ body {
 .container_12 .grid_2 {
   width:170px;
 }
-
+.grid_4{
+    height: auto;
+}
 .container_12 .grid_3 {
   width:270px;
   padding-left: 10px;

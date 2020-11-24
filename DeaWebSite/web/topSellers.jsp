@@ -19,7 +19,7 @@
     <body>
         <!--==============================header=================================-->
         <%@ include file="header.jsp" %>
-        <hr style="height:10px;background-color:#069" color="#003399"/>
+       
         <!--=======content================================-->
         <div class="content"><div class="ic"></div>
             <div class="white wt3">
@@ -68,7 +68,7 @@
             </div>
         </div>
         <!--==============================footer=================================-->
-        <hr style="height:10px;background-color:#069" color="#003399"/>
+        
         <%@ include file="footer.jsp" %>
     </body>
 </html>

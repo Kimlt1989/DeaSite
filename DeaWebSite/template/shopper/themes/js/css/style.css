@@ -187,7 +187,9 @@ a:hover {
     transition: transform 500ms ease 0s;
     width: 100%;
 }
-
+.container{
+    width: 84%;
+}
 .section {
 	background-attachment: scroll;
 	background-position: center top;

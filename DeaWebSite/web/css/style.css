@@ -196,7 +196,14 @@ a.btn:hover {
 }
 .wrapper, .extra_wrapper {
     overflow: hidden;
-    padding: 0 10px 10px 0;
+    padding: auto;
+    float: left;
+    width: 180px;
+    height: auto;
+}
+.wrapper123{
+    overflow: hidden;
+    padding: auto;
     float: left;
     width: auto;
     height: auto;
@@ -315,8 +322,8 @@ margin-right: 150px;
 }
 
 .black {
-    background-color: #FFF;
-    color: #FFF;
+    background-color: #EAEAEA;
+    color: #EAEAEA;
     padding-bottom: 74px;
 }
 
