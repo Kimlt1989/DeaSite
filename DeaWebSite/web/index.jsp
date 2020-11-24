@@ -155,7 +155,7 @@
 													</div>
 												</li>
                                                                                                       <%
-                                                                                                            if(count >= 4)
+                                                                                                            if(count >= 8)
                                                                                                                      break;
                                                                                                                  count++;
                                                                                                         }
@@ -207,7 +207,7 @@
 													</div>
 												</li>
                                                                                                       <%
-                                                                                                            if(count2 >= 4)
+                                                                                                            if(count2 >= 8)
                                                                                                                      break;
                                                                                                                  count2++;
                                                                                                         }
@@ -287,7 +287,7 @@
 													</div>
 												</li>
                                                                                                               <%
-                                                                                                                 if(number2 >= 4)
+                                                                                                                 if(number2 >= 8)
                                                                                                                      break;
                                                                                                                  number2++;
                                                                                                         }
@@ -347,7 +347,7 @@
 													</div>
 												</li>
                                                                                                               <%
-                                                                                                                 if(index >= 4)
+                                                                                                                 if(index >= 8)
                                                                                                                      break;
                                                                                                                  index++;
                                                                                                         }
