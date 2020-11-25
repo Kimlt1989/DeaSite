@@ -10,17 +10,27 @@ public class UserOrder {
     private String address; 
     private int confirm;    
     private String gameId;
+    private String orderDate;
 
     public UserOrder() {
     }
 
-    public UserOrder(int userId, String name, String phone, String address, int confirm, String gameId) {
+    public UserOrder(int userId, String name, String phone, String address, int confirm, String gameId, String orderDate) {
         this.userId = userId;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.confirm = confirm;
         this.gameId = gameId;
+        this.orderDate = orderDate;
+    }
+    
+     public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
     public int getOrderId() {

@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manage Order</title>
@@ -81,7 +82,18 @@
         <strong><div class="holder"></div></strong>
     </form>
     <table border="1">
-        <thead><tr><th>Id</th><th>Customer</th><th>Phone</th><th>Address</th><th>Games</th><th>Total</th><th>Confirm</th></tr></thead>
+        <thead>
+            <tr>
+                <th style="text-align: center">Id</th>
+                <th style="text-align: center">Customer</th>
+                <th style="text-align: center">Phone</th>
+                <th style="text-align: center">Address</th>
+                <th style="text-align: center">Order Date</th>
+                <th style="text-align: center">Games</th>
+                <th style="text-align: center">Total</th>
+                <th style="text-align: center">Confirm</th>
+            </tr>
+        </thead>
         <tbody id="itemContainer">
             <%
                 for (UserOrder each : userOrders) {
@@ -90,8 +102,9 @@
             <tr>
                 <td><%=each.getOrderId()%></td>
                 <td><%=each.getName()%></td>
-                <td><%=each.getPhone()%></td>
+                <td style="text-align: center"><%=each.getPhone()%></td>
                 <td><%=each.getAddress()%></td>
+                <td style="text-align: center"><%=each.getOrderDate()%></td>
                 <td><%
                     String game = each.getGameId();
                     String[] games = game.split(";");
@@ -104,8 +117,8 @@
                         totalPrice += game1.getPrice();
                     }
                     %></td>
-                <td><%=totalPrice%></td>
-                <td><a href="UserOrderConfirmServlet?confirm=<%=each.getOrderId() + "/" + totalPrice%>">Confirm This</a></td>
+                <td style="text-align: center"><%=totalPrice%> $</td>
+                <td style="text-align: center"><a href="UserOrderConfirmServlet?confirm=<%=each.getOrderId() + "/" + totalPrice%>">Confirm This</a></td>
             </tr>
             <%                    }
                     }

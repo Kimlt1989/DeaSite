@@ -9,9 +9,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>        
-        <div align="center" style="margin-top: 50px">            
-            <form method="post" action="ChangeUserPasswordServlet">
+    <body> 
+         <form  action="ChangeUserPassServlet" method="post">
                 <%
 
                     String userId = (String) session.getAttribute("userId");
@@ -23,10 +22,15 @@
                     UserDAO userDAO = new UserDAO();
                     User user = userDAO.findUserById(userId);
                 %>
-                <input value="<%=user.getId()%>" type="hidden" name="id"/>
+        <div align="center" style="margin-top: 50px">  
+            
+       
+        
+                <input value="<%=user.getId()%>" type="hidden" name="user_id"/>
+                
                 <table border="1">
                     <tr style="background-color: #771313">
-                        <td colspan="2" style="text-align: center"><h3>Change User Password</h3></td>
+                        <td colspan="2" style="text-align: center"><h3>Change User Password for <%=user.getLastName()%> <%=user.getFirstName()%></h3></td>
                     
                     </tr>
                     <tr>
@@ -42,12 +46,15 @@
                         <td><input name="confirmPassword" type="password"/></td>
                     </tr>                    
                 </table>
-                <input name="change" value="Change" type="submit"/>
+                
+                <input name="bchange" value="change" type="submit"/>
                 <input type="button" value="Back" onclick="window.location.href = 'index.jsp'"/>
-            </form>
                 <%
                     String msg = (String) request.getAttribute("msg");
                     out.println(msg!= null? msg: "");
                 %>
+        </div>
+                    </form>
+
     </body>
 </html>

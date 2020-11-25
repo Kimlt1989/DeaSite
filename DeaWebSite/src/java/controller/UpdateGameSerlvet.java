@@ -28,7 +28,7 @@ import util.DAOResources;
 
 /**
  *
- * @author Tieuphieu
+ * @author Kim Ly
  */
 public class UpdateGameSerlvet extends HttpServlet {
 

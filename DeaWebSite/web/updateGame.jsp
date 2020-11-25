@@ -60,6 +60,7 @@
             GameDAO gameDAO = new GameDAO();
             Games thisGame = gameDAO.findExactlyGames(gameIDSearch);
         %>
+        
         <form method="post" action="UpdateGameSerlvet" data-validate="parsley" enctype="multipart/form-data">
             <p style="color: red">* Please full fill all fields. Note: When update, have to update image again.</p>
             <center><table>

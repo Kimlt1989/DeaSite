@@ -58,11 +58,11 @@
                             UserDAO userDAO1 = new UserDAO();
                             boolean isAdmin = userDAO1.findAdminAccount(userId);
                             if (isAdmin == true) {
-                                out.println("<a href=\"login.jsp\"> Welcome, " + userName + "</a>"
+                                out.println("<a href=\"login.jsp\"> Welcome " + userName + "</a>"
                                         + "<a href=\"LogoutServlet\">Logout</a>"
                                         + "<a href=\"adminCP.jsp\"> Admin CP </a>");
                             } else {
-                                out.println("Welcome <a href=\"userInfo.jsp\">" + "<b>"+userName +"</b></a>"
+                                out.println("<a href=\"userInfo.jsp\"> Welcome " + "<b>"+userName +"</b></a>"
                                         + "<a href=\"LogoutServlet\">Logout</a>"
                                         + "<a href=\"shoppingCart.jsp\">YourCart</a>");
                             }

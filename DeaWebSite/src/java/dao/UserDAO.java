@@ -171,8 +171,9 @@ public class UserDAO extends DAOResources {
             System.out.println(ex);
         }
     }
-    public void changePassword(User user){
-        String sql= "update users set password ='"+ user.getPassword()+"' where user_id = "+ user.getId();
+    public boolean changePassword(String password, String user_id){
+        boolean result = true;
+        String sql= "update users set password ='"+ password+"' where user_id = "+ user_id;
         try{
             Connection connection = this.getConnection();
             Statement st = connection.createStatement();
@@ -182,6 +183,10 @@ public class UserDAO extends DAOResources {
         }
         catch(SQLException ex){
             System.out.println(ex);
+            result = false;
         }
+        return result;
     }
+
+
 }

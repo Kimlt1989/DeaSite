@@ -20,14 +20,14 @@
     <body>
         <!--==============================header=================================-->
         <%@ include file="header.jsp" %>
-         <hr style="height:10px;background-color:#069" color="#003399"/>
+        
         <!--=======content================================-->
 
         <div class="content"><div class="ic"></div>
             <div class="white bl1 bl2">
                 <div class="container_12">
                     <div class="grid_12">
-                        <h3 class="head1">List of Games</h3>
+                        <h3 class="head1">Categories List</h3>
                     </div>
                     <%
                         try {
@@ -64,7 +64,7 @@
             </div>
         </div>
         <!--==============================footer=================================-->
-         <hr style="height:10px;background-color:#069" color="#003399"/>
+        
         <%@ include file="footer.jsp" %>
     </body>
 </html>

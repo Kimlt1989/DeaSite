@@ -77,7 +77,7 @@
     <body class="page1">
         <!--==============================header=================================-->
         <%@ include file="header.jsp" %>
-        <div class="slider-relative" style="margin-bottom: 10px">
+        <div class="slider-relative" style="margin-bottom: 10px; width: 100%">
             <div class="slider-block">
                 <div class="slider">
                     <a href="#" class="prev"></a>
@@ -85,7 +85,7 @@
                     <ul class="items">
                         
                         <li>
-                            <img src="images/102.jpg" alt="">
+                            <img src="images/102.jpg" alt="" >
                            
                         </li>
                         <li>

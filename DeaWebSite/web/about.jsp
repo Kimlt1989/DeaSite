@@ -32,7 +32,7 @@
                             <p>Sell DVDS online was created as an easy way for people to sell DVD's CD's and Video Games online. Sell DVD's Online is owned by parent company Ez Book Recycle Inc. Ez Book Recycle Inc. is no stranger to buying items online. With the first buyback website launching in February 2008, Ez Book Recycle has purchased items from over 58,000 individuals from every state in the US!</p>
                             
                             <h3>Our Mission</h3>
-                            <p>Ez Book Recycle's core mission is to help and protect our enviroment by encouraging the reuse of items. We encourage reuse by offering consumers the ability to sell excess items easily. When you sell items to Ez Book Recycle you are helping increase the supply of used goods in circulation, thus cutting down the amount of raw material needed for new merchandise.</p>
+                            <p>Bring a new way to buy a DVD product.</p>
                             <h3>Thank You!</h3>
 
                             By taking a stand and sellling your surplus items you are giving them another life! With out you selling your items the life cycle of the items end! Keep your items in use, sell them back!</div>

@@ -5,6 +5,9 @@
 package dao;
 
 import java.sql.*;
+import static java.time.Instant.now;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import model.UserOrder;
@@ -15,10 +18,14 @@ public class UserOrderDAO extends DAOResources {
 
     public UserOrderDAO() {
     }
+    
+   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-DD");
+   LocalDateTime now = LocalDateTime.now();
+   
 
     public void addNewOrder(UserOrder userOrder) {
-        String sql = "insert into user_order (USERORDER_ID, USER_ID, NAME, PHONE, ADDRESS, CONFIRM, GAMEIDS) "
-                + "values (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into user_order (USERORDER_ID, USER_ID, NAME, PHONE, ADDRESS, CONFIRM, GAMEIDS, OderDate) "
+                + "values (?, ?, ?, ?, ?, ?, ?, ?)";
         Connection connection = this.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -29,6 +36,7 @@ public class UserOrderDAO extends DAOResources {
             ps.setString(5, userOrder.getAddress());
             ps.setInt(6, userOrder.getConfirm());
             ps.setString(7, userOrder.getGameId());
+            ps.setString(8, dtf.format(now));
             ps.execute();
             ps.close();
             this.closeConnection();
@@ -52,6 +60,7 @@ public class UserOrderDAO extends DAOResources {
                 userOrder.setAddress(rs.getString("ADDRESS"));
                 userOrder.setConfirm(rs.getInt("CONFIRM"));
                 userOrder.setGameId(rs.getString("GAMEIDs"));
+                userOrder.setOrderDate(rs.getString("OrderDate"));
                 getAll.add(userOrder);
             }
             rs.close();

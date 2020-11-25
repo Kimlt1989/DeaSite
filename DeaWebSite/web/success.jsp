@@ -42,6 +42,7 @@
                                 int intUserId = Integer.parseInt(userId);
                                 int confirm = 0;
                                 String listGameId = "";
+                                String orderDate = "";
                                 for (String each : gameIds) {
                                     listGameId += each + ";"; 
                                     i++;
@@ -49,7 +50,7 @@
                                 UserDAO userDAO = new UserDAO();
                                 User desUser = userDAO.findUserById(userId);
                                 String desUserName = desUser.getFirstName() + " " + desUser.getLastName();
-                                UserOrder userOrder = new UserOrder(intUserId, desUserName, desUser.getPhone(), desUser.getAddress(), confirm, listGameId);
+                                UserOrder userOrder = new UserOrder(intUserId, desUserName, desUser.getPhone(), desUser.getAddress(), confirm, listGameId, orderDate);
                                 UserOrderDAO userOrderDAO = new UserOrderDAO();
                                 userOrderDAO.addNewOrder(userOrder);
                                 out.println("<strong>You bought " + i + " game(s). <br>");
