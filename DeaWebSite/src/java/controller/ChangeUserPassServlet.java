@@ -47,7 +47,7 @@ public class ChangeUserPassServlet extends HttpServlet {
         if (bChange == null) {
             bChange = "";
         } else {
-            boolean resule = userDAO.changePassword(currentPasswordInput, userId);
+            boolean resule = userDAO.changePassword(newPassowrd, userId);
             if(resule){
                    out.write("<script type='text/javascript'>\n");
                         out.write("alert('Done');\n");
@@ -61,15 +61,7 @@ public class ChangeUserPassServlet extends HttpServlet {
             }
         }
         /* TODO output your page here. You may use following sample code. */
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet changeUserPassword</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet changeUserPassword at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+       
         out.close();
     }
 
