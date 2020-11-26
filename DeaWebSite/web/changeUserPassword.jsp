@@ -39,15 +39,25 @@
                     </tr>
                     <tr>
                         <td>New Password:</td>
-                        <td><input name="newPassword" type="password"/></td>
+                        <td><input name="newPassword" type="password" id="password"/></td>
                     </tr>
                     <tr>
                         <td>Confirm New Password:</td>
-                        <td><input name="confirmPassword" type="password"/></td>
+                        <td><input name="confirmPassword" type="password" oninput="check(this)"/></td>
+                        <script language='javascript' type='text/javascript'>
+                            function check(input) {
+                                if (input.value != document.getElementById('password').value) {
+                                    input.setCustomValidity('Password Must be Matching.');
+                                } else {
+                                    // input is valid -- reset the error message
+                                    input.setCustomValidity('');
+                                }
+                            }
+                        </script>
                     </tr>                    
                 </table>
                 
-                <input name="bchange" value="change" type="submit"/>
+                <input name="bchange" value="Change" type="submit"/>
                 <input type="button" value="Back" onclick="window.location.href = 'index.jsp'"/>
                 <%
                     String msg = (String) request.getAttribute("msg");

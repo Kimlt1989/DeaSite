@@ -157,9 +157,12 @@ public class UserDAO extends DAOResources {
             System.out.println(ex);
         }
     }
-    public void updateUserInfo(User user){
-        String sql= "update users set email ='"+ user.getEmail()+ "', phone= '"+ user.getPhone()
-                + "', address = '"+ user.getAddress()+ "' where user_id = "+ user.getId();
+    public boolean updateUserInfo(String email, String phone, int gender, String dob, String firstname, String lastname, String address, int userid){
+        boolean result = true;
+        String sql= "update users set email ='"+ email + "', phone= '"+ phone + "', gender = '" 
+                +  gender + "', dob = '" + dob + "'" + ", firstname = '" + firstname 
+                +"'" + ", lastname = '" + lastname +"'"
+                + ", address = '"+ address + "' where user_id = "+ userid;
         try{
             Connection connection = this.getConnection();
             Statement st = connection.createStatement();
@@ -169,7 +172,9 @@ public class UserDAO extends DAOResources {
         }
         catch(SQLException ex){
             System.out.println(ex);
+            result = false;
         }
+        return result;
     }
     public boolean changePassword(String password, String user_id){
         boolean result = true;

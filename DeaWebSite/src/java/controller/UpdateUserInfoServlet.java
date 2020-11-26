@@ -18,9 +18,8 @@ import model.User;
  *
  * @author Pc52
  */
-public class ChangeUserPassServlet extends HttpServlet {
+public class UpdateUserInfoServlet extends HttpServlet {
 
-   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,43 +33,42 @@ public class ChangeUserPassServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-   
-        String userId = request.getParameter("user_id");
-        String currentPasswordInput = request.getParameter("currentPassword");
-        String newPassowrd = request.getParameter("newPassword");
-        String confirmPassword = request.getParameter("confirmPassword");
-        String bChange = request.getParameter("bchange");
+        
+        int userId = Integer.parseInt(request.getParameter("user_id"));
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        String dob = request.getParameter("birthday");
+        int gender = Integer.parseInt(request.getParameter("gender"));
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String bUpdate = request.getParameter("bupdate");
         
         UserDAO userDAO = new UserDAO();
-        User user = userDAO.findUserById(userId);
-        String currentPassword = user.getPassword();
+        User user = userDAO.findUserById(String.valueOf(userId));
         
-        if (bChange == null) {
-            bChange = "";
-        } else {
-            if(currentPassword.equals(currentPasswordInput)){
-                boolean result = userDAO.changePassword(newPassowrd, userId);
-                if(result){
+        try {
+            if (bUpdate == null) 
+            {
+                bUpdate = "";
+            } else {
+                System.out.println("askjdbjsabjkcbdw------"+gender);
+                boolean result = userDAO.updateUserInfo(email, phone, gender, dob, firstname, lastname, address, userId);
+                if (result){
                             out.write("<script type='text/javascript'>\n");
-                            out.write("alert('Done');\n");
+                            out.write("alert('Updated');\n");
                             out.write("setTimeout(function(){window.location.href='index.jsp'},1000);");
                             out.write("</script>\n");
-                }else {
+                }else{
                             out.write("<script type='text/javascript'>\n");
-                            out.write("alert('Failed');\n");
-                            out.write("setTimeout(function(){window.location.href='index.jsp'},1000);");
+                            out.write("alert('Please try again!');\n");
+                            out.write("setTimeout(function(){window.location.href='userinfo.jsp'},1000);");
                             out.write("</script>\n");
                 }
-            }else{
-                            out.write("<script type='text/javascript'>\n");
-                            out.write("alert('Wrong Password. Please input again!');\n");
-                            out.write("setTimeout(function(){window.location.href='changeUserPassword.jsp'},1000);");
-                            out.write("</script>\n");
             }
+        } finally {
+            out.close();
         }
-        /* TODO output your page here. You may use following sample code. */
-       
-        out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -111,7 +109,5 @@ public class ChangeUserPassServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-     
 
 }

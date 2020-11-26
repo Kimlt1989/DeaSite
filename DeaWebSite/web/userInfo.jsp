@@ -29,23 +29,51 @@
                 UserDAO userDAO = new UserDAO();
                 User user = userDAO.findUserById(userId);
             %>
-            <input value="<%=user.getId() %>" type="hidden" name="id"/>
+            <input value="<%=user.getId()%>" type="hidden" name="user_id"/>
             <table border="1">
                 <tr style="background-color: #771313">
                     <td colspan="2" style="text-align: center"><h3>User Information</h3></td>
                     
                 </tr>
                 <tr>
-                    <td>Full Name:</td>
-                    <td><b><%=user.getLastName()%> <%=user.getFirstName()%></b></td>
+                    <td>First Name:</td>
+                    <td><input name="firstname" type="text" value="<%=user.getFirstName()%>"></input></td>
+                </tr>
+                  <tr>
+                    <td>Last Name:</td>
+                    <td><input name="lastname" type="text" value="<%=user.getLastName()%>"></input></td>
                 </tr>
                 <tr>
                     <td>Birthday: </td>
-                    <td><%=user.getDOB()%></td>
+                    <td><input type="date" name="birthday"  value="<%=user.getDOB()%>"></input></td>
                 </tr>
                 <tr>
                     <td>Gender: </td>
-                    <td><%=user.getGender() == 1 ? "Male" : "Female"%></td>
+                    <td>
+                        <select name="gender">
+                            <% for(int i=0; i <=1; i++) {
+                                
+                                String abc = user.getGender() == i ? "Male" : "Female";
+                                
+                                if (i == 1){
+                                    abc = "Male";
+                                }
+                                   if (i == 0){
+                                    abc = "Female";
+                                }
+                                
+                                if(user.getGender()== i){
+                                      out.println("<option selected value='"+i+"'>"+ abc  +"</option>");
+                                }else{
+                                    
+                                out.println("<option value='"+i+"'>"+ abc  +"</option>");
+                                
+                                }
+                            %>
+
+                            <%}%>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>Email: </td>
@@ -63,7 +91,7 @@
                 <a href="changeUserPassword.jsp">Change Password</a>
             <br/><br/>
             <input type="button" value="Back" onclick="window.location.href = 'index.jsp'"/>
-            <input type="submit" name="update" value="Update"/>
+            <input type="submit" name="bupdate" value="Update"/>
             <input name="reset" type="reset" value="Reset" />
             </form>
         </div> 

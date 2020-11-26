@@ -108,6 +108,10 @@
         <servlet-name>ChangeUserPassServlet</servlet-name>
         <servlet-class>controller.ChangeUserPassServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateUserInfoServlet</servlet-name>
+        <servlet-class>controller.UpdateUserInfoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SubscribeServlet</servlet-name>
         <url-pattern>/SubscribeServlet</url-pattern>
@@ -215,6 +219,10 @@
     <servlet-mapping>
         <servlet-name>ChangeUserPassServlet</servlet-name>
         <url-pattern>/ChangeUserPassServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateUserInfoServlet</servlet-name>
+        <url-pattern>/UpdateUserInfoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
