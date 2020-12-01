@@ -81,16 +81,21 @@
         <p style="color: red">* You have to know that this list is the short list of this table for you to recognize the record.</p>
         <strong><div class="holder"></div></strong>
     </form>
-    <table border="1">
+    <table border="1" id="myTable2">
+            <style>
+                th{
+                    cursor: pointer;
+                }
+            </style>
         <thead>
             <tr>
-                <th style="text-align: center">Id</th>
-                <th style="text-align: center">Customer</th>
-                <th style="text-align: center">Phone</th>
-                <th style="text-align: center">Address</th>
-                <th style="text-align: center">Order Date</th>
-                <th style="text-align: center">Games</th>
-                <th style="text-align: center">Total</th>
+                <th style="text-align: center" onclick="sortTable(0)">ID</th>
+                <th style="text-align: center" onclick="sortTable(1)">Customer</th>
+                <th style="text-align: center" onclick="sortTable(2)">Phone</th>
+                <th style="text-align: center" onclick="sortTable(3)">Address</th>
+                <th style="text-align: center" onclick="sortTable(4)">Order Date</th>
+                <th style="text-align: center" onclick="sortTable(5)">Games</th>
+                <th style="text-align: center" onclick="sortTable(6)">Total</th>
                 <th style="text-align: center">Confirm</th>
             </tr>
         </thead>
@@ -100,7 +105,7 @@
                     if (each.getConfirm() == 0) {
             %>
             <tr>
-                <td><%=each.getOrderId()%></td>
+                <td style="text-align: center"><%=String.valueOf(each.getOrderId())%></td>
                 <td><%=each.getName()%></td>
                 <td style="text-align: center"><%=each.getPhone()%></td>
                 <td><%=each.getAddress()%></td>
@@ -125,6 +130,69 @@
                 
             %>
         </tbody>
+           <script>
+  
+                function sortTable(n) {
+                  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                  table = document.getElementById("myTable2");
+                  switching = true;
+                  // Set the sorting direction to ascending:
+                  dir = "asc";
+                  /* Make a loop that will continue until
+                  no switching has been done: */
+                  while (switching) {
+                    // Start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /* Loop through all table rows (except the
+                    first, which contains table headers): */
+                    for (i = 1; i < (rows.length - 1); i++) {
+                      // Start by saying there should be no switching:
+                      shouldSwitch = false;
+                      /* Get the two elements you want to compare,
+                      one from current row and one from the next: */
+                      x = rows[i].getElementsByTagName("TD")[n];
+                      y = rows[i + 1].getElementsByTagName("TD")[n];
+                      /* Check if the two rows should switch place,
+                      based on the direction, asc or desc: */
+                      if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                          // If so, mark as a switch and break the loop:
+                          shouldSwitch = true;
+                          break;
+                          
+                        }
+                        
+                      } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                          // If so, mark as a switch and break the loop:
+                          shouldSwitch = true;
+                          break;
+                        }
+                    
+                      }
+                    }
+                    if (shouldSwitch) {
+                      /* If a switch has been marked, make the switch
+                      and mark that a switch has been done: */
+                      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                      switching = true;
+                      // Each time a switch is done, increase this count by 1:
+                      switchcount ++;
+                    } else {
+                      /* If no switching has been done AND the direction is "asc",
+                      set the direction to "desc" and run the while loop again. */
+                      if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                      }
+                    }
+                  }
+                }
+                
+                </script>
+                
+                              
     </table>
     <hr>
     <br>
