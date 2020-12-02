@@ -31,12 +31,12 @@
     <div class="container_12" >
         <div class="grid_12">
             <div class="h_phone">
-               <div class="blog_search">
-                   <form id="form1" action="SearchServlet" method="post">
+                <div class="blog_search">
+                    <form id="form1" action="SearchServlet" method="post" style="width: 230px; text-align: right">
                        <input type="text" name="searchKeyword" >
                         <a onClick="document.getElementById('form1').submit()" href="#"></a>
                     </form> 
-                    Need Help? Call Us +084.123
+                    <p>Need Help? Call Us +084965767326</p>
                 </div> 
             </div>
 
