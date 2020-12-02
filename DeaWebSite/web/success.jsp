@@ -1,5 +1,7 @@
 
 
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDateTime"%>
 <%@page import="dao.UserOrderDAO"%>
 <%@page import="dao.UserDAO"%>
 <%@page import="java.util.List"%>
@@ -47,6 +49,11 @@
                                     listGameId += each + ";"; 
                                     i++;
                                 }
+                                
+                                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                                LocalDateTime now = LocalDateTime.now();
+                                orderDate = dtf.format(now);
+                                
                                 UserDAO userDAO = new UserDAO();
                                 User desUser = userDAO.findUserById(userId);
                                 String desUserName = desUser.getFirstName() + " " + desUser.getLastName();

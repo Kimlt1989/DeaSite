@@ -49,6 +49,7 @@
     <div class="menu_block" >
         <div class="container_12">
             <div class="grid_12">
+<!--                <div class="mycart"><a  href="shoppingCart.jsp"></a></div>-->
                 <div class="socials"><a  href="https://www.facebook.com/GAMEstore"></a></div>
                 <div class="autor">
                     <%
@@ -60,11 +61,12 @@
                             if (isAdmin == true) {
                                 out.println("<a href=\"login.jsp\"> Welcome " + userName + "</a>"
                                         + "<a href=\"LogoutServlet\">Logout</a>"
-                                        + "<a href=\"adminCP.jsp\"> Admin CP </a>");
+                                        + "<a href=\"adminCP.jsp\"> Admin CP </a>"
+                                        + "<a href=\"shoppingCart.jsp\">Your Cart</a>");
                             } else {
                                 out.println("<a href=\"userInfo.jsp\"> Welcome " + "<b>"+userName +"</b></a>"
                                         + "<a href=\"LogoutServlet\">Logout</a>"
-                                        + "<a href=\"shoppingCart.jsp\">YourCart</a>");
+                                        + "<a href=\"shoppingCart.jsp\">Your Cart</a>");
                             }
                         }
                     %>

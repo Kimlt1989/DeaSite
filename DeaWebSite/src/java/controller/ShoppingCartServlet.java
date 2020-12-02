@@ -56,7 +56,7 @@ public class ShoppingCartServlet extends HttpServlet {
                 out.write("<script type='text/javascript'>\n");
                 out.write("alert('Thank you! You have been add your game into your cart");
                 out.write(".');\n");
-                out.write("setTimeout(function(){window.location.href='shoppingCart.jsp'},1000);");
+                out.write("setTimeout(function(){window.location.href='products.jsp'},500);");
                 out.write("</script>\n");
             } else {
                 response.sendRedirect("index.jsp");

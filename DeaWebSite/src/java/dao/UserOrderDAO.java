@@ -24,7 +24,7 @@ public class UserOrderDAO extends DAOResources {
    
 
     public void addNewOrder(UserOrder userOrder) {
-        String sql = "insert into user_order (USERORDER_ID, USER_ID, NAME, PHONE, ADDRESS, CONFIRM, GAMEIDS, OderDate) "
+        String sql = "insert into user_order (USERORDER_ID, USER_ID, NAME, PHONE, ADDRESS, CONFIRM, GAMEIDS, OrderDate) "
                 + "values (?, ?, ?, ?, ?, ?, ?, ?)";
         Connection connection = this.getConnection();
         try {
@@ -36,7 +36,7 @@ public class UserOrderDAO extends DAOResources {
             ps.setString(5, userOrder.getAddress());
             ps.setInt(6, userOrder.getConfirm());
             ps.setString(7, userOrder.getGameId());
-            ps.setString(8, dtf.format(now));
+            ps.setString(8, userOrder.getOrderDate());
             ps.execute();
             ps.close();
             this.closeConnection();

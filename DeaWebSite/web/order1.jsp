@@ -1,4 +1,6 @@
 
+<%@page import="java.time.LocalDateTime"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="dao.UserOrderDAO"%>
 <%@page import="dao.UserDAO"%>
 <%@page import="model.UserOrder"%>
@@ -25,6 +27,10 @@
                     <div class="grid_12">
                         <h3>Order Details</h3><hr>
                         <%
+                             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                             LocalDateTime now = LocalDateTime.now();
+                             String orderDate = dtf.format(now);
+                            
                             if (userId == null) {
                                 out.write("<script type='text/javascript'>\n");
                                 out.write("alert(' You have to login or register to ");
@@ -39,7 +45,7 @@
                                 UserDAO userDAO = new UserDAO();
                                 User desUser = userDAO.findUserById(userId);
                                 String desUserName = desUser.getFirstName() + " " + desUser.getLastName();
-                                UserOrder userOrder = new UserOrder(intUserId, desUserName, desUser.getPhone(), desUser.getAddress(), 0, gameId);
+                                UserOrder userOrder = new UserOrder(intUserId, desUserName, desUser.getPhone(), desUser.getAddress(), 0, gameId, orderDate);
                                 UserOrderDAO userOrderDAO = new UserOrderDAO();
                                 userOrderDAO.addNewOrder(userOrder);
                                 out.println("Thank you for supporting us ! We will call you to confirm this order.");
