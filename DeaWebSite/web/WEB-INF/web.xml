@@ -112,6 +112,10 @@
         <servlet-name>UpdateUserInfoServlet</servlet-name>
         <servlet-class>controller.UpdateUserInfoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AuthorizePaymentServlet</servlet-name>
+        <servlet-class>controller.AuthorizePaymentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SubscribeServlet</servlet-name>
         <url-pattern>/SubscribeServlet</url-pattern>
@@ -223,6 +227,10 @@
     <servlet-mapping>
         <servlet-name>UpdateUserInfoServlet</servlet-name>
         <url-pattern>/UpdateUserInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthorizePaymentServlet</servlet-name>
+        <url-pattern>/AuthorizePaymentServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

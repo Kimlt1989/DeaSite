@@ -54,6 +54,7 @@
                                 } else {
                                     String remove = request.getParameter("remove");
                                     double total = 0.0;
+                                    double shipping = 0.0;
                                     String append = "";
                                     if (remove == null) {
                                         remove = "";
@@ -66,13 +67,23 @@
                                             total += game.getPrice();
                                             append += "<tr><td align=\"center\">" + i + "</td>";
                                             append += "<td align=\"center\">" + game.getName() + "</td>";
-                                            append += "<td align=\"center\">" + game.getPrice() + "USD</td>";
+                                            append += "<td align=\"center\">" + game.getPrice() + " USD</td>";
                                             append += "<td align=\"center\"><a href=\"shoppingCart.jsp?remove=" + i
                                                     + "\"><font style=\"color: #0000FF\">Remove</a></font>" + "</td>";
                                             append += "</tr>";
                                         }
+                                        if (total >= 50.0){
+                                            total = total;
+                                            shipping = 0.0;
+                                        }else {
+                                            shipping = 15.0;
+                                            total = total + shipping;
+                                            
+                                        }
+                                        append += "<tr><td colspan=\"2\" align=\"right\"><font style=\"color: #050505\"><strong>Shipping fee:</strong></font></td>";
+                                        append += "<td align=\"center\">" + shipping + " USD</td>";
                                         append += "<tr><td colspan=\"2\" align=\"right\"><font style=\"color: #FF0000\"><strong>Total:</strong></font></td>";
-                                        append += "<td align=\"center\">" + total + "USD</td><td align=\"center\"><a href =\"success.jsp\" class=\"btn\">Buy Now !</a></td></tr>";
+                                        append += "<td align=\"center\">" + total + " USD</td><td align=\"center\"><a href =\"success.jsp\" class=\"btn\">Buy Now !</a></td></tr>";
                                         out.println(append);
                                     } else {
                                         int tempRemove = Integer.parseInt(remove);
