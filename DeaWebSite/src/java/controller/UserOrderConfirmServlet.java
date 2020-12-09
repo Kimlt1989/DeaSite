@@ -35,8 +35,12 @@ public class UserOrderConfirmServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+        OrderDetailDAO detailDAO = new OrderDetailDAO();
         try {
+            
               String confirmId = request.getParameter("confirm");
+              
            if(confirmId != null){
                String[] list = confirmId.split("/");
                double price = Double.parseDouble(list[1]);
@@ -45,9 +49,15 @@ public class UserOrderConfirmServlet extends HttpServlet {
                UserOrder userOrder = userOrderDAO.findExactlyUserOrder(intConfirmId);
                userOrder.setConfirm(1);
                userOrderDAO.update(userOrder, list[0]);
-               OrderDetail orderDetail = new OrderDetail(1, price, intConfirmId);
+               
+               String name = userOrder.getName();
+               int delivery = 0;
+               
+               System.out.println("ID ====="+ intConfirmId + " price========" + price + " name ======" + name);
+               OrderDetail orderDetail = new OrderDetail(name, delivery, price, intConfirmId);
                OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
                orderDetailDAO.addNewOrderDetail(orderDetail);
+               
                request.setAttribute("orderDetail", orderDetail);
                request.setAttribute("userOrder", userOrder);
                request.getRequestDispatcher("printReceipt.jsp").forward(request, response);

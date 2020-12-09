@@ -52,7 +52,7 @@ public class UpdateUserInfoServlet extends HttpServlet {
             {
                 bUpdate = "";
             } else {
-                System.out.println("askjdbjsabjkcbdw------"+gender);
+              
                 boolean result = userDAO.updateUserInfo(email, phone, gender, dob, firstname, lastname, address, userId);
                 if (result){
                             out.write("<script type='text/javascript'>\n");

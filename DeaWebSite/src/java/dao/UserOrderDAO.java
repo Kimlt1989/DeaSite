@@ -26,6 +26,7 @@ public class UserOrderDAO extends DAOResources {
     public void addNewOrder(UserOrder userOrder) {
         String sql = "insert into user_order (USERORDER_ID, USER_ID, NAME, PHONE, ADDRESS, CONFIRM, GAMEIDS, OrderDate) "
                 + "values (?, ?, ?, ?, ?, ?, ?, ?)";
+        
         Connection connection = this.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(sql);

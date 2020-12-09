@@ -19,14 +19,15 @@ public class OrderDetailDAO extends DAOResources{
     }
     
      public void addNewOrderDetail(OrderDetail detail) {
-        String sql = "insert into order_details (DELIVERY, PRICE, user_order_id) "
-                + "values (?, ?, ?)";
+        String sql = "insert into order_details (NAMES, DELIVERY, PRICE, user_order_id)"
+                + "values (?, ?, ?, ?);";
         Connection connection = this.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, detail.getDelivery());
-            ps.setDouble(2, detail.getPrice());
-            ps.setInt(3, detail.getUser_order_id());
+            ps.setString(1, detail.getName());
+            ps.setInt(2, detail.getDelivery());
+            ps.setDouble(3, detail.getPrice());
+            ps.setInt(4, detail.getUser_order_id());
             ps.execute();
             ps.close();
             this.closeConnection();

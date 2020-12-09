@@ -13,16 +13,26 @@ public class OrderDetail {
     private int delivery;   
     private double price;
     private int user_order_id;
+    private String name;
 
     public OrderDetail() {
     }
     
-    public OrderDetail(int delivery, double price, int user_order_id) {
+    public OrderDetail(String name,int delivery, double price, int user_order_id) {
         this.delivery = delivery;
         this.price = price;
         this.user_order_id = user_order_id;
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public int getId() {
         return id;
     }
