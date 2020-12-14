@@ -4,6 +4,9 @@
 <%@page import="model.UserOrder"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.UserOrderDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.UserDAO"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,11 +14,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manage Order</title>
-        <%@ include file="checkAdmin.jsp" %>
+       <link rel="icon" href="images/icon.jpeg">
+        <link rel="shortcut icon" href="images/icon.jpeg" />
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/jquery.js"></script>
         <script src="js/jquery-migrate-1.1.1.js"></script>
         <script src="js/Jpages.js"></script>
-        <script type="text/javascript">
+        <script src="js/superfish.js"></script>
+     <script type="text/javascript">
             $(function() {
                 /* initiate plugin */
                 $("div.holder").jPages({
@@ -64,10 +70,9 @@
         </style>
         <style type="text/css">
             table{ width: 100%;}
-            td, th{ text-align: left; height:25px; }
+            td, th{ text-align: left; height:25px; word-wrap: break-word; border: solid 1px #222;padding-top: 5px;padding-left: 5px;}
             th { background: #f5f5f5; }
         </style>
-
         <%
             UserOrderDAO userOrderDAO = new UserOrderDAO();
             List<UserOrder> userOrders = userOrderDAO.getUserOrder();
@@ -75,13 +80,35 @@
         %>
     </head>
     <body>
-        <h1>Manage User Order Table</h1>
-
-        <font style="color: #E83671"><h3>List of Not Confirm Order</h3></font>
+        <%@ include file="header.jsp" %>
+        <%
+            userId = (String) session.getAttribute("userId");
+            if (userId == null) {
+                response.sendRedirect("index.jsp");
+                return;
+            } else {
+                UserDAO userDAO1 = new UserDAO();
+                boolean isAdmin = userDAO1.findAdminAccount(userId);
+                if (isAdmin == false) {
+                    response.sendRedirect("index.jsp");
+                    return;
+                }
+            }
+        %>
+        <div class="content"><div class="ic"></div>
+            <div class="white wt3">
+                <div class="container_14">
+        
+        <h2 style="color: #0000FF">Pending Order Confirm</h2>
+        </br>
+     
         <p style="color: red">* You have to know that this list is the short list of this table for you to recognize the record.</p>
         <strong><div class="holder"></div></strong>
     </form>
-    <table border="1" id="myTable2">
+
+
+            
+    <table style="border: 1px solid #222; border-collapse: collapse" id="myTable2">
             <style>
                 th{
                     cursor: pointer;
@@ -89,14 +116,14 @@
             </style>
         <thead>
             <tr>
-                <th style="text-align: center" onclick="sortTable(0)">ID</th>
-                <th style="text-align: center" onclick="sortTable(1)">Customer</th>
-                <th style="text-align: center" onclick="sortTable(2)">Phone</th>
-                <th style="text-align: center" onclick="sortTable(3)">Address</th>
-                <th style="text-align: center" onclick="sortTable(4)">Order Date</th>
-                <th style="text-align: center" onclick="sortTable(5)">Games</th>
-                <th style="text-align: center" onclick="sortTable(6)">Total</th>
-                <th style="text-align: center">Confirm</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px" onclick="sortTable(0)">ID</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px" onclick="sortTable(1)">Customer</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px" onclick="sortTable(2)">Phone</th>
+                <th style="text-align: center; width: 150px; padding: 5px 5px 5px 5px" onclick="sortTable(3)">Address</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px" onclick="sortTable(4)">Order Date</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px" onclick="sortTable(5)">Games</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px" onclick="sortTable(6)">Total</th>
+                <th style="text-align: center; padding: 5px 5px 5px 5px">Confirm</th>
             </tr>
         </thead>
         <tbody id="itemContainer">
@@ -105,11 +132,11 @@
                     if (each.getConfirm() == 0) {
             %>
             <tr>
-                <td style="text-align: center"><%=String.valueOf(each.getOrderId())%></td>
+                <td style="text-align: center; padding: 5px 5px 5px 5px"><%=String.valueOf(each.getOrderId())%></td>
                 <td><%=each.getName()%></td>
-                <td style="text-align: center"><%=each.getPhone()%></td>
+                <td style="text-align: center; padding: 5px 5px 5px 5px"><%=each.getPhone()%></td>
                 <td><%=each.getAddress()%></td>
-                <td style="text-align: center"><%=each.getOrderDate()%></td>
+                <td style="text-align: center;width: 80px; padding: 5px 5px 5px 5px"><%=each.getOrderDate()%></td>
                 <td><%
                     String game = each.getGameId();
                     String[] games = game.split(";");
@@ -122,8 +149,10 @@
                         totalPrice += game1.getPrice();
                     }
                     %></td>
-                <td style="text-align: center"><%=totalPrice%> $</td>
-                <td style="text-align: center"><a href="UserOrderConfirmServlet?confirm=<%=each.getOrderId() + "/" + totalPrice%>">Confirm This</a></td>
+                <td style="text-align: center;width: 50px"><%=totalPrice%> $</td>
+                <td style="text-align: center; display: table-cell; vertical-align: inherit; text-indent: initial;padding: 10px;vertical-align: top;">
+                <input type="button" onclick="location.href='UserOrderConfirmServlet?confirm=<%=each.getOrderId() + "/" + totalPrice%>';" value="Confirm" />
+                </td>
             </tr>
             <%                    }
                     }
@@ -196,7 +225,9 @@
     </table>
     <hr>
     <br>
-    <a href="adminCP.jsp"><strong><font style="color: #0000FF"> <<< Back to Admin Main Page</font></strong></a><br>
-    <a href="index.jsp"><strong><font style="color: #0000FF"> <<< Back to index</font></strong></a>
+                </div>
+            </div>
+        </div>
+        <%@ include file="footer.jsp" %>
 </body>
 </html>

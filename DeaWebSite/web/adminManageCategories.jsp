@@ -4,6 +4,7 @@
 <%@page import="dao.CategoryDAO"%>
 
 <%@page import="java.util.List"%>
+<%@page import="dao.UserDAO"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,11 +12,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manage Categories</title>
-        <%@ include file="checkAdmin.jsp" %>
+          <link rel="icon" href="images/icon.jpeg">
+        <link rel="shortcut icon" href="images/icon.jpeg" />
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/jquery.js"></script>
         <script src="js/jquery-migrate-1.1.1.js"></script>
         <script src="js/Jpages.js"></script>
-        <script type="text/javascript">
+        <script src="js/superfish.js"></script>
+     <script type="text/javascript">
             $(function() {
                 /* initiate plugin */
                 $("div.holder").jPages({
@@ -64,7 +68,7 @@
         </style>
         <style type="text/css">
             table{ width: 100%;}
-            td, th{ text-align: left; height:25px; }
+            td, th{ text-align: left; height:25px; word-wrap: break-word;}
             th { background: #f5f5f5; }
         </style>
         <%
@@ -80,12 +84,39 @@
         %>
     </head>
     <body>
-        <h1>Manage Categories Page</h1>
-        <a href="index.jsp"><strong><font style="color: #0000FF"> <<< Return to index</font></strong></a>
-        
+              <%@ include file="header.jsp" %>
+        <%
+            userId = (String) session.getAttribute("userId");
+            if (userId == null) {
+                response.sendRedirect("index.jsp");
+                return;
+            } else {
+                UserDAO userDAO1 = new UserDAO();
+                boolean isAdmin = userDAO1.findAdminAccount(userId);
+                if (isAdmin == false) {
+                    response.sendRedirect("index.jsp");
+                    return;
+                }
+            }
+        %>
+    <div class="content"><div class="ic"></div>
+       <div class="white wt3">
+            <div class="container_14">
+        <h2 style="color: #0000FF">Manage Categories Page</h2>
 
         <strong><div class="holder"></div></strong>
-        <table border="1">
+           <style>
+                th {
+                    border: solid 1px #222;
+                }
+                td {
+                    border: solid 1px #222;
+                }
+                table.mytable tbody td {
+                    border: solid thin;
+                }
+            </style>
+        <table style="border: 1px solid #222; border-collapse: collapse" id="mytable">
             <thead><tr><th>No.</th><th>Name</th><th>Image</th><th>Description</th><th>Update</th><th>Delete</th></tr></thead>
             <tbody id="itemContainer">
                 <%
@@ -98,8 +129,13 @@
                     <td><%=each.getCat_name()%></td>
                     <td><%=each.getCat_image()%></td>
                     <td><textarea rows="1" cols="120" disabled="true"><%=each.getCat_description()%></textarea></td>
-                    <td><a href="updateCategories.jsp?gameId=<%=each.getCat_id()%>">Update</a></td>
-                    <td><a href="adminManageCategories.jsp?deleteId=<%=each.getCat_id()%>">Delete</a></td>
+                    <td style="text-align: center; display: table-cell; vertical-align: inherit; text-indent: initial;padding: 10px;vertical-align: top;">
+                    <input type="button" onclick="location.href='updateCategories.jsp?gameId=<%=each.getCat_id()%>';" value="Update" />
+                    </td>
+                    <td style="text-align: center; display: table-cell; vertical-align: inherit; text-indent: initial;padding: 10px;vertical-align: top;">
+                    <input type="button" onclick="location.href='adminManageCategories.jsp?deleteId=<%=each.getCat_id()%>';" value="Delete" />
+                    </td>
+                 
                 </tr>
                 <%                    }
                 %>
@@ -108,7 +144,10 @@
         <hr>
         <a href="addNewCategory.jsp"><strong><font style="color: red">Add New</font></strong></a><br>
         <br>
-        <a href="adminCP.jsp"><strong><font style="color: #0000FF"> <<< Return to Admin Main Page</font></strong></a><br>
-        
+      
+            </div>
+       </div>
+    </div>
+            <%@ include file="footer.jsp" %>
     </body>
 </html>

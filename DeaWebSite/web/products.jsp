@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <title>Movies</title>
         <link rel="icon" href="images/icon.jpeg">
         <link rel="shortcut icon" href="images/icon.jpeg" />
