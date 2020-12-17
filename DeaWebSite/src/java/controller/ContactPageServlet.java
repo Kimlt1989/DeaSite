@@ -42,8 +42,8 @@ public class ContactPageServlet extends HttpServlet {
             } else {
          
                 
-                 String host = "mail.saigontech.edu.vn";
-                String to = "kimlt07@saigontech.edu.vn";
+                 String host = "mail.gmail.com";
+                String to = "kimlt1989@gmail";
                 String from = request.getParameter("from");
                 String subject = request.getParameter("subject");
                 String messageText = request.getParameter("body");

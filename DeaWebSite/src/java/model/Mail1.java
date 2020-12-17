@@ -68,8 +68,8 @@ public class Mail1 {
   public  String sendEmail(String from, String to, String subject, String mailText, String fromPassword)
     {
        String temp = "Send email successful!!!";
-       String smtpServer = "mail.saigontech.edu.vn";
-       String userName = "kimlt07@saigontech.edu.vn";
+       String smtpServer = "mail.gmail.com";
+       String userName = "kimlt1989@gmail.com";
        String password= "kim123";
        if(fromPassword!=null)
            password = fromPassword;
@@ -78,7 +78,7 @@ public class Mail1 {
         if(mailText == null)
 	        mailText = "";
         if(from == null)
-	        from = "liemht@saigontech.edu.vn";
+	        from = "kimlt1989@gmail.com";
         try {
             Properties props = System.getProperties();
             props.put( "mail.smtp.host", smtpServer ) ;

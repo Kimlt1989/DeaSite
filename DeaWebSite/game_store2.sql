@@ -349,7 +349,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,2,'admin','123','admin','admin','1989-03-07',0,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(4,2,'admin','admin','Kim','Ly','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(5,1,'mod','mod','Kim','Ly','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(6,1,'kim','123456','Kim 123','Ly 321','1989-03-09',1,'0965767326','161 duong dinh hoi','kimlt19@gmail.com'),(7,1,'vinh','123','vinh','tran','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(8,1,'vi','123','vi','ku','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(9,1,'test','test','test','test','1999-01-03',1,'234346567484','','thanhdp10@saigontech.edu.vn');
+INSERT INTO `users` VALUES (1,2,'admin','123','admin','admin','1989-03-07',0,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(4,2,'admin','admin','Kim','Ly','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(5,1,'mod','mod','Kim','Ly','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(6,1,'kim','123456','Kim 123','Ly 321','1989-03-09',1,'0965767326','161 duong dinh hoi','kimlt19@gmail.com'),(7,1,'vinh','123','vinh','tran','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(8,1,'vi','123','vi','ku','1989-03-07',1,'0972262923','01 than nhan trung','kimlt1989@gmail.com'),(9,1,'test','test','test','test','1999-01-03',1,'234346567484','','thanhdp10@gmail.edu.vn');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
