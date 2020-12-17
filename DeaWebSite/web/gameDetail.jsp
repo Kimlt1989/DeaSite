@@ -65,7 +65,7 @@
                                                 <td>&nbsp;</td>
                                                 <td align="center"> <div class="clear"></div>
                                                     <a href="ShoppingCartServlet?gameId=<%=game.getId()%>" class="btn">Add to Cart</a>
-                                                    <a href="order1.jsp?gameId=<%=game.getId()%>" class="btn">Buy Now!</a>
+                                                    <a href="ShoppingCartServlet?gameId=<%=game.getId()%>" class="btn">Buy Now!</a>
                                                 </td>
                                             </tr>
                                             </table>
@@ -83,5 +83,5 @@
                                             <!--==============================footer=================================-->
                                          
                                             <%@ include file="footer.jsp" %>
-                                            </body>
-                                            </html>
+</body>
+</html>

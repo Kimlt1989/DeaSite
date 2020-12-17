@@ -1,10 +1,16 @@
 <%-- 
     Document   : userDetail
     Created on : Dec 21, 2013, 11:53:40 PM
-    Author     : SamSung
+    Author     : Kim Ly
 --%>
 
 <%@page import="model.User"%>
+<%@page import="dao.UserDAO"%>
+<%@page import="model.Games"%>
+<%@page import="dao.GameDAO"%>
+<%@page import="java.io.File"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="dao.UserDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,16 +19,72 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="images/icon.jpeg" />
         <title>JSP Page</title>
+        <link rel="icon" href="images/icon.jpeg">
+        <link rel="shortcut icon" href="images/icon.jpeg" />
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-migrate-1.1.1.js"></script>
+        <script src="js/Jpages.js"></script>
+        <script src="js/superfish.js"></script>
+     <script type="text/javascript">
+            $(function() {
+                /* initiate plugin */
+                $("div.holder").jPages({
+                    containerID: "itemContainer",
+                    perPage: 10,
+                    previous: "←",
+                    next: "→",
+                    delay: 20
+                });
+            });
+        </script>
+        <style type="text/css">
+            .holder {
+                margin:15px 0;
+            }
+            .holder a {
+                font-size:12px;
+                cursor:pointer;
+                margin:0 5px;
+                color:#333;
+            }
+            .holder a:hover {
+                background-color:#222;
+                color:#fff;
+            }
+            .holder a.jp-previous {
+                margin-right:15px;
+            }
+            .holder a.jp-next {
+                margin-left:15px;
+            }
+            .holder a.jp-current,a.jp-current:hover {
+                color:#FF4242;
+                font-weight:bold;
+            }
+            .holder a.jp-disabled,a.jp-disabled:hover {
+                color:#bbb;
+            }
+            .holder a.jp-current,a.jp-current:hover,.holder a.jp-disabled,a.jp-disabled:hover {
+                cursor:default;
+                background:none;
+            }
+            .holder span {
+                margin: 0 5px;
+            }          
+        </style>
+        <style type="text/css">
+            table{ width: 100%;}
+            td, th{ text-align: left; height:25px; word-wrap: break-word;padding-top: 10px}
+            th { background: #f5f5f5; }
+        </style>
     </head>
-    <%
 
-        String userId = (String) session.getAttribute("userId");
-        String userName = (String) session.getAttribute("userName");
-        if (userId == null) {
-            response.sendRedirect("index.jsp");
-        }
-    %>
     <body>
+        <%@ include file="header.jsp" %>
+            <div class="content"><div class="ic"></div>
+            <div class="white wt3">
+                <div class="container_14">
         <div align="center" style="margin-top: 50px">            
             <form method="post" action="UpdateUserInfoServlet">
             <%
@@ -31,8 +93,8 @@
             %>
             <input value="<%=user.getId()%>" type="hidden" name="user_id"/>
             <table border="1">
-                <tr style="background-color: #771313">
-                    <td colspan="2" style="text-align: center"><h3>User Information</h3></td>
+                <tr>
+                    <td colspan="2" style="text-align: center"><h5 style="color: #222">User Information</h5></td>
                     
                 </tr>
                 <tr>
@@ -95,5 +157,9 @@
             <input name="reset" type="reset" value="Reset" />
             </form>
         </div> 
+                </div>
+            </div>
+            </div>
+                 <%@ include file="footer.jsp" %>
     </body>
 </html>

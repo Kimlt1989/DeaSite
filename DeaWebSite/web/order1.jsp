@@ -1,4 +1,8 @@
 
+<%@page import="model.Games"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.GameDAO"%>
 <%@page import="java.time.LocalDateTime"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="dao.UserOrderDAO"%>
@@ -39,16 +43,23 @@
                                 out.write("</script>\n");
                                 return;
                             } else {
-                                String gameId = (String) request.getParameter("gameId") + ";";
+                                String gameId = (String) request.getParameter("gameId");
                                 int intUserId = Integer.parseInt(userId);
                                 int confirm = 0;
                                 UserDAO userDAO = new UserDAO();
+                                GameDAO gameDAO = new GameDAO();
+                               
                                 User desUser = userDAO.findUserById(userId);
                                 String desUserName = desUser.getFirstName() + " " + desUser.getLastName();
                                 UserOrder userOrder = new UserOrder(intUserId, desUserName, desUser.getPhone(), desUser.getAddress(), 0, gameId, orderDate);
                                 UserOrderDAO userOrderDAO = new UserOrderDAO();
                                 userOrderDAO.addNewOrder(userOrder);
-                                out.println("Thank you for supporting us ! We will call you to confirm this order.");
+                                int id = Integer.getInteger(userOrder.getGameId());
+                          
+                           
+                                
+                               
+                                out.println("Thank "+ desUserName +" ! We will call you to confirm this order.");
                             }
                         %>
                     </div>

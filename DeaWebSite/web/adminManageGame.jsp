@@ -81,7 +81,7 @@
                 deleteId = "";
             } else {
                 String appPath = request.getRealPath("/images/GameImages");
-                gameDAO.deleteAFilm(deleteId, appPath);
+                gameDAO.deleteAGame(deleteId, appPath);
             }
             List<Games> games = gameDAO.getAllGames();
         %>

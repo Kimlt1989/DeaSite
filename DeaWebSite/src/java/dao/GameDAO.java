@@ -139,7 +139,7 @@ public class GameDAO extends DAOResources {
         return result;
     }
 
-    public void deleteAFilm(String id, String url) {
+    public void deleteAGame(String id, String url) {
         try {
             int intId = Integer.parseInt(id);
             Games oldGame = findExactlyGames(intId);
