@@ -1,7 +1,5 @@
 <%-- 
-    Document   : updateSupplier
-    Created on : Dec 23, 2013, 10:27:19 PM
-    Author     : KIM
+    Author     : KIM LY
 --%>
 
 

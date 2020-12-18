@@ -1,6 +1,4 @@
 <%-- 
-    Document   : userDetail
-    Created on : Dec 21, 2013, 11:53:40 PM
     Author     : Kim Ly
 --%>
 

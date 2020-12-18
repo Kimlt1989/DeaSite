@@ -1,7 +1,5 @@
 <%-- 
-    Document   : addNewSupplier
-    Created on : Dec 23, 2013, 10:15:15 PM
-    Author     : KIM
+    Author     : Kim Ly
 --%>
 
 

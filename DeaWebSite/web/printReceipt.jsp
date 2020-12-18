@@ -1,7 +1,6 @@
 <%-- 
-    Document   : printReceipt
-    Created on : Dec 29, 2013, 2:33:24 PM
-    Author     : KIM
+ 
+    Author     : KIM LY
 --%>
 
 <%@page import="model.Games"%>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Checkout
     Created on : Dec 7, 2020, 11:57:45 AM
-    Author     : Pc52
+    Author     : Kim Ly
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

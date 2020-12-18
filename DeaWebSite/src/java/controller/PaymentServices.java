@@ -12,7 +12,7 @@ import com.paypal.base.rest.*;
 import model.OrderDetail;
 /**
  *
- * @author Pc52
+ * @author Kim Ly
  */
 class PaymentServices {
       private static final String CLIENT_ID = "ATiSxL9v4zGxhyWXkX6GQwS0JYvfL3qFEA4aoDg3l44u3SRKERaZJ67TmyR9ZInPoGXPanoQe0WgYa9C";

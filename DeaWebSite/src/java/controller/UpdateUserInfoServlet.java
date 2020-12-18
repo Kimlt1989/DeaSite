@@ -16,7 +16,7 @@ import model.User;
 
 /**
  *
- * @author Pc52
+ * @author Kim Ly
  */
 public class UpdateUserInfoServlet extends HttpServlet {
 
